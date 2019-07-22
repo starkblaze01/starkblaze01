@@ -1,7 +1,8 @@
 import * as React from "react";
 import injectSheet from "react-jss";
 import Particle from "./Particles";
-import { Typography } from "antd";
+import ParticlesDark from "./ParticlesDark";
+import { Typography, Switch, Icon } from "antd";
 // import { useTransition, animated } from "react-spring";
 
 const styles = (theme: any) => ({
@@ -14,6 +15,15 @@ const styles = (theme: any) => ({
     verticleAlign: "middle !important",
     height: "100vh",
     paddingTop: "10%"
+  },
+  switch: {
+    display: "flex",
+    justifyContent: "space-between",
+    position: "fixed",
+    alignItems: "center",
+    alignContent: "center",
+    marginLeft: "95%",
+    marginTop: "2%"
   }
 });
 const { Title } = Typography;
@@ -34,16 +44,25 @@ const { Title } = Typography;
 
 class Introduction extends React.PureComponent<any, any> {
   state: any = {
-    count: 0
+    mode: "dark"
   };
   render() {
     const { classes } = this.props;
     return (
       <>
-        <Particle />
+        {/* {this.state.mode === "light" ? <Particle /> : <ParticlesDark />} */}
+        <ParticlesDark />
+        <div className={classes.switch}>
+          <Switch
+            checkedChildren={<Icon type="smile" />}
+            unCheckedChildren={<Icon type="smile" theme="filled" />}
+            defaultChecked
+          />
+        </div>
         <div className={classes.align}>
           <Title>Hi!</Title>
           <h1>I am Mayank Pathela!</h1>
+          <h2>Under Maintenance</h2>
           {/* <Animate /> */}
         </div>
       </>
