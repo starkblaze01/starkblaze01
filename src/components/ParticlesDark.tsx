@@ -6,58 +6,26 @@ const styles = (theme: any) => ({
   background: {
     position: "absolute",
     height: "100%",
-    width: "100%"
+    width: "100%",
+    backgroundColor: "#000"
   }
 });
 
-class ParticleDark extends React.PureComponent<any, any> {
+class ParticlesDark extends React.PureComponent<any, any> {
   param: any = {
     particles: {
       number: {
-        value: 160,
-        density: {
-          enable: false
-        }
+        value: 50
       },
       size: {
-        value: 3,
-        random: true,
-        anim: {
-          speed: 4,
-          size_min: 0.3
-        }
-      },
-      line_linked: {
-        enable: false
-      },
-      move: {
-        random: true,
-        speed: 1,
-        direction: "top",
-        out_mode: "out"
+        value: 3
       }
     },
     interactivity: {
       events: {
         onhover: {
           enable: true,
-          mode: "bubble"
-        },
-        onclick: {
-          enable: true,
           mode: "repulse"
-        }
-      },
-      modes: {
-        bubble: {
-          distance: 250,
-          duration: 2,
-          size: 0,
-          opacity: 0
-        },
-        repulse: {
-          distance: 400,
-          duration: 4
         }
       }
     }
@@ -72,5 +40,5 @@ class ParticleDark extends React.PureComponent<any, any> {
   }
 }
 
-const ParticleDarkStyled = injectSheet(styles)(ParticleDark);
-export default ParticleDarkStyled;
+const ParticlesDarkStyled = injectSheet(styles)(ParticlesDark);
+export default ParticlesDarkStyled;

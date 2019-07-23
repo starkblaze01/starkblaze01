@@ -3,10 +3,13 @@ import injectSheet from "react-jss";
 import Particle from "./Particles";
 import ParticlesDark from "./ParticlesDark";
 import { Typography, Switch, Icon } from "antd";
+import { Link } from "react-router-dom";
 // import { useTransition, animated } from "react-spring";
 
 const styles = (theme: any) => ({
   align: {
+    zIndex: 3,
+    fontColor: "blue",
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
@@ -18,12 +21,12 @@ const styles = (theme: any) => ({
   },
   switch: {
     display: "flex",
-    justifyContent: "space-between",
+    width: "100%",
+    justifyContent: "flex-end",
     position: "fixed",
     alignItems: "center",
     alignContent: "center",
-    marginLeft: "95%",
-    marginTop: "2%"
+    marginTop: "10px"
   }
 });
 const { Title } = Typography;
@@ -44,26 +47,40 @@ const { Title } = Typography;
 
 class Introduction extends React.PureComponent<any, any> {
   state: any = {
-    mode: "dark"
+    mode: false
   };
   render() {
     const { classes } = this.props;
     return (
       <>
-        {/* {this.state.mode === "light" ? <Particle /> : <ParticlesDark />} */}
-        <ParticlesDark />
+        {this.state.mode ? <Particle /> : <ParticlesDark />}
         <div className={classes.switch}>
           <Switch
             checkedChildren={<Icon type="smile" />}
             unCheckedChildren={<Icon type="smile" theme="filled" />}
-            defaultChecked
+            onChange={() => {
+              this.setState({ mode: !this.state.mode });
+            }}
           />
         </div>
         <div className={classes.align}>
           <Title>Hi!</Title>
           <h1>I am Mayank Pathela!</h1>
-          <h2>Under Maintenance</h2>
           {/* <Animate /> */}
+          {this.state.mode ? (
+            ""
+          ) : (
+            <Title style={{ color: "coral", zIndex: 1 }}>
+              Under Maintenance
+            </Title>
+          )}
+          <Link to="https://www.linkedin.com/in/mayank-pathela-1a165b154">
+            <Icon type="linkedin" style={{ zIndex: 10 }} />
+          </Link>
+          <Link to="https://github.com/starkblaze01/">
+            <Icon type="github" style={{ zIndex: 10 }} />
+          </Link>
+          {/* <a href="https://www.linkedin.com/in/mayank-pathela-1a165b154">ddd</a> */}
         </div>
       </>
     );

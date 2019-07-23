@@ -14,9 +14,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <JssProvider jss={localJss}>
-        <ThemeProvider>
-          <div>sss</div>
-        </ThemeProvider>
+        <ThemeProvider />
       </JssProvider>
     </Provider>
   );

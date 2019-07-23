@@ -5,7 +5,6 @@ import Particles from "react-particles-js";
 const styles = (theme: any) => ({
   background: {
     position: "absolute",
-    height: "100%",
     width: "100%"
   }
 });
@@ -73,36 +72,35 @@ class Particle extends React.PureComponent<any, any> {
           rotateX: 600,
           rotateY: 600
         }
-      },
-      // },
-      interactivity: {
-        events: {
-          onhover: {
-            enable: true,
-            mode: "bubble"
-          },
-          onclick: {
-            enable: true,
-            mode: "repulse"
-          },
-          resize: true
+      }
+    },
+    interactivity: {
+      events: {
+        onhover: {
+          enable: true,
+          mode: "bubble"
         },
-        modes: {
-          bubble: {
-            distance: 150,
-            size: 6,
-            duration: 2,
-            opacity: 0,
-            speed: 3
-          },
-          repulse: {
-            distance: 150,
-            duration: 0.4
-          }
-        }
+        onclick: {
+          enable: true,
+          mode: "repulse"
+        },
+        resize: true
       },
-      retina_detect: true
-    }
+      modes: {
+        bubble: {
+          distance: 150,
+          size: 6,
+          duration: 2,
+          opacity: 0,
+          speed: 3
+        },
+        repulse: {
+          distance: 150,
+          duration: 0.4
+        }
+      }
+    },
+    retina_detect: true
   };
   render() {
     const { classes } = this.props;
