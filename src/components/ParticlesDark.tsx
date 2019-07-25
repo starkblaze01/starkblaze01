@@ -15,10 +15,20 @@ class ParticlesDark extends React.PureComponent<any, any> {
   param: any = {
     particles: {
       number: {
-        value: 50
+        value: 100
       },
       size: {
         value: 3
+      },
+      color: {
+        value: [
+          "#DF1818",
+          "#159AD5",
+          "#1ED620",
+          "#FBFBFB",
+          "#C111C1",
+          "#DBF307"
+        ]
       }
     },
     interactivity: {

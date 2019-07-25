@@ -3,7 +3,7 @@ import injectSheet from "react-jss";
 import Particle from "./Particles";
 import ParticlesDark from "./ParticlesDark";
 import { Typography, Switch, Icon } from "antd";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import { useTransition, animated } from "react-spring";
 
 const styles = (theme: any) => ({
@@ -70,17 +70,33 @@ class Introduction extends React.PureComponent<any, any> {
           {this.state.mode ? (
             ""
           ) : (
-            <Title style={{ color: "coral", zIndex: 1 }}>
+            <>
+              <Title style={{ color: "coral", zIndex: 1 }}>Hi!</Title>
+              <h1 style={{ color: "coral", zIndex: 1 }}>
+                I am Mayank Pathela!
+              </h1>
+              {/* <Title style={{ color: "coral", zIndex: 1 }}>
               Under Maintenance
-            </Title>
+            </Title> */}
+            </>
           )}
-          <Link to="https://www.linkedin.com/in/mayank-pathela-1a165b154">
-            <Icon type="linkedin" style={{ zIndex: 10 }} />
-          </Link>
-          <Link to="https://github.com/starkblaze01/">
-            <Icon type="github" style={{ zIndex: 10 }} />
-          </Link>
-          {/* <a href="https://www.linkedin.com/in/mayank-pathela-1a165b154">ddd</a> */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "6em"
+            }}
+          >
+            <a
+              href="https://www.linkedin.com/in/mayank-pathela-1a165b154/"
+              style={{ zIndex: 1 }}
+            >
+              <Icon type="linkedin" style={{ fontSize: "2em" }} />
+            </a>
+            <a href="https://github.com/starkblaze01/" style={{ zIndex: 1 }}>
+              <Icon type="github" style={{ fontSize: "2em" }} />
+            </a>
+          </div>
         </div>
       </>
     );
