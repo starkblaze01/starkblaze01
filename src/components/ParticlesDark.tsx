@@ -4,7 +4,7 @@ import Particles from "react-particles-js";
 
 const styles = (theme: any) => ({
   background: {
-    position: "absolute",
+    position: "fixed",
     height: "100%",
     width: "100%",
     backgroundColor: "#000"
@@ -15,7 +15,7 @@ class ParticlesDark extends React.PureComponent<any, any> {
   param: any = {
     particles: {
       number: {
-        value: 100
+        value: 150
       },
       size: {
         value: 3

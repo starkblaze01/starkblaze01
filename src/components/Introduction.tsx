@@ -75,16 +75,13 @@ class Introduction extends React.PureComponent<any, any> {
               <h1 style={{ color: "coral", zIndex: 1 }}>
                 I am Mayank Pathela!
               </h1>
-              {/* <Title style={{ color: "coral", zIndex: 1 }}>
-              Under Maintenance
-            </Title> */}
             </>
           )}
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              width: "6em"
+              width: "8em"
             }}
           >
             <a
@@ -95,6 +92,9 @@ class Introduction extends React.PureComponent<any, any> {
             </a>
             <a href="https://github.com/starkblaze01/" style={{ zIndex: 1 }}>
               <Icon type="github" style={{ fontSize: "2em" }} />
+            </a>
+            <a href="https://twitter.com/StarkBlaze01" style={{ zIndex: 1 }}>
+              <Icon type="twitter" style={{ fontSize: "2em" }} />
             </a>
           </div>
         </div>
