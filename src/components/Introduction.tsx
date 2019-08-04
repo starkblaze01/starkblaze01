@@ -94,7 +94,11 @@ class Introduction extends React.PureComponent<any, any> {
               <Icon type="github" style={{ fontSize: "2em" }} />
             </a>
             <a href="https://twitter.com/StarkBlaze01" style={{ zIndex: 1 }}>
-              <Icon type="twitter" style={{ fontSize: "2em" }} />
+              <Icon
+                type="twitter-circle"
+                theme="filled"
+                style={{ fontSize: "2em" }}
+              />
             </a>
           </div>
         </div>
