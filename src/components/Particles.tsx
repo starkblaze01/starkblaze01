@@ -5,6 +5,7 @@ import Particles from "react-particles-js";
 const styles = (theme: any) => ({
   background: {
     position: "fixed",
+    height: '100%',
     width: "100%"
   }
 });

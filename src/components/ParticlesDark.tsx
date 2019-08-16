@@ -7,7 +7,8 @@ const styles = (theme: any) => ({
     position: "fixed",
     height: "100%",
     width: "100%",
-    backgroundColor: "#000"
+    backgroundColor: "#000",
+    zIndex: 1,
   }
 });
 
