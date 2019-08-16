@@ -26,7 +26,21 @@ const styles = (theme: any) => ({
     position: "fixed",
     alignItems: "center",
     alignContent: "center",
-    marginTop: "10px"
+    marginTop: "10px",
+    zIndex: 2,
+  },
+  cards: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '70%',
+    margin: 'auto',
+  },
+  card: {
+    height: '300px',
+    width: '250px',
+    border: '1px solid #8f8f8f',
+    boxShadow: '5px 5px 5px 5px',
+    borderRadius: '10px 10px',
   }
 });
 const { Title } = Typography;
@@ -64,43 +78,49 @@ class Introduction extends React.PureComponent<any, any> {
           />
         </div>
         <div className={classes.align}>
-          <Title>Hi!</Title>
-          <h1>I am Mayank Pathela!</h1>
+          <div style={{ position: 'fixed', width: '100%' }}>
+            <Title>My Projects and Repos</Title>
+            <div className={classes.cards}>
+              <div className={classes.card}></div>
+              <div className={classes.card}></div>
+              <div className={classes.card}></div>
+            </div>
+          </div>
           {/* <Animate /> */}
           {this.state.mode ? (
             ""
           ) : (
-            <>
-              <Title style={{ color: "coral", zIndex: 1 }}>Hi!</Title>
-              <h1 style={{ color: "coral", zIndex: 1 }}>
-                I am Mayank Pathela!
+              <>
+                <Title style={{ color: "coral", zIndex: 2 }}>Hi!</Title>
+                <h1 style={{ color: "coral", zIndex: 2 }}>
+                  I am Mayank Pathela!
               </h1>
-            </>
-          )}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "8em"
-            }}
-          >
-            <a
-              href="https://www.linkedin.com/in/mayank-pathela-1a165b154/"
-              style={{ zIndex: 1 }}
-            >
-              <Icon type="linkedin" style={{ fontSize: "2em" }} />
-            </a>
-            <a href="https://github.com/starkblaze01/" style={{ zIndex: 1 }}>
-              <Icon type="github" style={{ fontSize: "2em" }} />
-            </a>
-            <a href="https://twitter.com/StarkBlaze01" style={{ zIndex: 1 }}>
-              <Icon
-                type="twitter-circle"
-                theme="filled"
-                style={{ fontSize: "2em" }}
-              />
-            </a>
-          </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "8em"
+                  }}
+                >
+                  <a
+                    href="https://www.linkedin.com/in/mayank-pathela-1a165b154/"
+                    style={{ zIndex: 2 }}
+                  >
+                    <Icon type="linkedin" style={{ fontSize: "2em" }} />
+                  </a>
+                  <a href="https://github.com/starkblaze01/" style={{ zIndex: 1 }}>
+                    <Icon type="github" style={{ fontSize: "2em" }} />
+                  </a>
+                  <a href="https://twitter.com/StarkBlaze01" style={{ zIndex: 1 }}>
+                    <Icon
+                      type="twitter-circle"
+                      theme="filled"
+                      style={{ fontSize: "2em" }}
+                    />
+                  </a>
+                </div>
+              </>
+            )}
         </div>
       </>
     );
