@@ -3,6 +3,9 @@ import injectSheet from "react-jss";
 import Particle from "./Particles";
 import ParticlesDark from "./ParticlesDark";
 import { Typography, Switch, Icon } from "antd";
+import { getAIRepodetails, getJeneretaRepoDetails, getSentimentRepoDetails } from '../actions/gitrepoAction';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 // import { Link } from "react-router-dom";
 // import { useTransition, animated } from "react-spring";
 
@@ -60,6 +63,13 @@ const { Title } = Typography;
 // };
 
 class Introduction extends React.PureComponent<any, any> {
+
+  async componentDidMount() {
+    await this.props.getJeneretaRepoDetails();
+    await this.props.getAIRepodetails();
+    await this.props.getSentimentRepoDetails();
+  }
+
   state: any = {
     mode: false
   };
@@ -127,5 +137,15 @@ class Introduction extends React.PureComponent<any, any> {
   }
 }
 
+const mapStateToProps = ({ gitrepoReducer }: { gitrepoReducer: any }) => ({
+  other: gitrepoReducer.other,
+});
+
+const mapDispatchToProps = (dispatch: any) => (bindActionCreators({
+  getJeneretaRepoDetails,
+  getAIRepodetails,
+  getSentimentRepoDetails,
+}, dispatch))
+
 const IntroductionStyled = injectSheet(styles)(Introduction);
-export default IntroductionStyled;
+export default connect(mapStateToProps, mapDispatchToProps)(IntroductionStyled);

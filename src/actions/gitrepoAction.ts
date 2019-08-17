@@ -1,17 +1,26 @@
 import { GET_SENTIMENT_ANALYZER, GET_AI_CODES, GET_JENERETA } from './constants';
-import { fetchRepoData } from '../api/fetchdata';
+import { fetchSentimentRepoData, fetchAIRepoData, fetchJeneretaRepoData } from '../api/fetchdata';
 
-export const getRepoDetails = () => async (dispatch: any, getState: any) => {
-    dispatch(
-        fetchRepoData()
-    );
+export const getSentimentRepoDetails = () => async (dispatch: any, getState: any) => {
+    const res = await fetchSentimentRepoData();
     dispatch({
-        GET_SENTIMENT_ANALYZER
+        type: GET_SENTIMENT_ANALYZER,
+        data: res,
     });
+}
+
+export const getAIRepodetails = () => async (dispatch: any) => {
+    const res = await fetchAIRepoData();
     dispatch({
         type: GET_AI_CODES,
+        data: res,
     });
+}
+
+export const getJeneretaRepoDetails = () => async (dispatch: any) => {
+    const res = await fetchJeneretaRepoData();
     dispatch({
-        type: GET_JENERETA
+        type: GET_JENERETA,
+        data: res,
     });
 }

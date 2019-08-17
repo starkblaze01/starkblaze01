@@ -1,10 +1,8 @@
 import { GET_AI_CODES, GET_JENERETA, GET_SENTIMENT_ANALYZER } from '../actions/constants';
 const defaultState: any = {
-    name: "",
-    stargazers_count: '',
-    language: '',
-    homepage: '',
-    other: '',
+    sentiment: '',
+    ai: '',
+    jenereta: '',
 }
 
 export default function (state: any = defaultState, action: any) {
@@ -12,19 +10,19 @@ export default function (state: any = defaultState, action: any) {
         case GET_AI_CODES: {
             return {
                 ...state,
-                other: action.data,
+                ai: action.data,
             }
         }
         case GET_JENERETA: {
             return {
                 ...state,
-
+                jenereta: action.data,
             }
         }
         case GET_SENTIMENT_ANALYZER: {
             return {
                 ...state,
-
+                sentiment: action.data,
             }
         }
         default: {
