@@ -3,6 +3,10 @@ import injectSheet from "react-jss";
 import Particle from "./Particles";
 import ParticlesDark from "./ParticlesDark";
 import { Typography, Switch, Icon } from "antd";
+import { getAIRepodetails, getJeneretaRepoDetails, getSentimentRepoDetails } from '../actions/gitrepoAction';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Spin } from 'antd';
 // import { Link } from "react-router-dom";
 // import { useTransition, animated } from "react-spring";
 
@@ -34,6 +38,7 @@ const styles = (theme: any) => ({
     justifyContent: 'space-between',
     width: '70%',
     margin: 'auto',
+    color: '#0057e3',
   },
   card: {
     height: '300px',
@@ -60,11 +65,18 @@ const { Title } = Typography;
 // };
 
 class Introduction extends React.PureComponent<any, any> {
+
+  async componentDidMount() {
+    await this.props.getJeneretaRepoDetails();
+    await this.props.getAIRepodetails();
+    await this.props.getSentimentRepoDetails();
+  }
+
   state: any = {
     mode: false
   };
   render() {
-    const { classes } = this.props;
+    const { classes, sentiment, ai, jenereta } = this.props;
     return (
       <>
         {this.state.mode ? <Particle /> : <ParticlesDark />}
@@ -81,9 +93,57 @@ class Introduction extends React.PureComponent<any, any> {
           <div style={{ position: 'fixed', width: '100%' }}>
             <Title>My Projects and Repos</Title>
             <div className={classes.cards}>
-              <div className={classes.card}></div>
-              <div className={classes.card}></div>
-              <div className={classes.card}></div>
+              <div className={classes.card}>
+                {this.props.loadingSentiment ? <div><Spin size="large" /></div> :
+                  <div>
+                    <h1 style={{ color: '#e36600' }}>{sentiment.name}</h1>
+                    <div>Stars Count: {sentiment.stargazers_count}</div>
+                    <div>Language: {sentiment.language}</div>
+                    {sentiment.homepage && sentiment.homepage.length ?
+                      <div>Homepage:
+                      {sentiment.homepage}
+                      </div> : ''}
+                    <br />
+                    <div> Description: {sentiment.description}</div>
+                    <br />
+                    Star Me:<a href={sentiment.html_url}><Icon type="star" theme="filled" /></a>
+                  </div>
+                }
+              </div>
+              <div className={classes.card}>
+                {this.props.loadingJenereta ? <div><Spin size="large" /></div> :
+                  <div>
+                    <h1 style={{ color: '#e36600' }}>{jenereta.name}</h1>
+                    <div>Stars Count: {jenereta.stargazers_count}</div>
+                    <div>Language: {jenereta.language}</div>
+                    {jenereta.homepage && jenereta.homepage.length ?
+                      <div>Homepage:
+                      <a href={jenereta.homepage}>{jenereta.homepage}</a>
+                      </div> : ''}
+                    <br />
+                    <div> Description: {jenereta.description}</div>
+                    <br />
+                    Star Me:<a href={jenereta.html_url}><Icon type="star" theme="filled" /></a>
+                  </div>
+                }
+              </div>
+              <div className={classes.card}>
+                {this.props.loadingAI ? <div><Spin size="large" /></div> :
+                  <div>
+                    <h1 style={{ color: '#e36600' }}>{ai.name}</h1>
+                    <div>Stars Count: {ai.stargazers_count}</div>
+                    <div>Language: {ai.language}</div>
+                    {ai.homepage && ai.homepage.length ?
+                      <div>Homepage:
+                      <a href={ai.homepage}>{ai.homepage}</a>
+                      </div> : ''}
+                    <br />
+                    <div> Description: {ai.description}</div>
+                    <br />
+                    Star Me:<a href={ai.html_url}><Icon type="star" theme="filled" /></a>
+                  </div>
+                }
+              </div>
             </div>
           </div>
           {/* <Animate /> */}
@@ -127,5 +187,20 @@ class Introduction extends React.PureComponent<any, any> {
   }
 }
 
+const mapStateToProps = ({ gitrepoReducer }: { gitrepoReducer: any }) => ({
+  sentiment: gitrepoReducer.sentiment.data,
+  ai: gitrepoReducer.ai.data,
+  jenereta: gitrepoReducer.jenereta.data,
+  loadingSentiment: gitrepoReducer.loadingSentiment,
+  loadingAI: gitrepoReducer.loadingAI,
+  loadingJenereta: gitrepoReducer.loadingJenereta,
+});
+
+const mapDispatchToProps = (dispatch: any) => (bindActionCreators({
+  getJeneretaRepoDetails,
+  getAIRepodetails,
+  getSentimentRepoDetails,
+}, dispatch))
+
 const IntroductionStyled = injectSheet(styles)(Introduction);
-export default IntroductionStyled;
+export default connect(mapStateToProps, mapDispatchToProps)(IntroductionStyled);
