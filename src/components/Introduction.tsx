@@ -188,9 +188,9 @@ class Introduction extends React.PureComponent<any, any> {
 }
 
 const mapStateToProps = ({ gitrepoReducer }: { gitrepoReducer: any }) => ({
-  sentiment: gitrepoReducer.sentiment.data,
-  ai: gitrepoReducer.ai.data,
-  jenereta: gitrepoReducer.jenereta.data,
+  sentiment: gitrepoReducer.sentiment ? gitrepoReducer.sentiment.data : null,
+  ai: gitrepoReducer.ai ? gitrepoReducer.ai.data : null,
+  jenereta: gitrepoReducer.jenereta ? gitrepoReducer.jenereta.data : null,
   loadingSentiment: gitrepoReducer.loadingSentiment,
   loadingAI: gitrepoReducer.loadingAI,
   loadingJenereta: gitrepoReducer.loadingJenereta,
