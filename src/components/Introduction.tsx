@@ -2,7 +2,7 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import Particle from "./Particles";
 import ParticlesDark from "./ParticlesDark";
-import { Typography, Switch, Icon } from "antd";
+import { Typography, Switch, Icon, Tooltip } from "antd";
 import { getAIRepodetails, getJeneretaRepoDetails, getSentimentRepoDetails } from '../actions/gitrepoAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -151,7 +151,7 @@ class Introduction extends React.PureComponent<any, any> {
             ""
           ) : (
               <>
-                <Title style={{ color: "coral", zIndex: 2 }}>Hi!</Title>
+                <Title style={{ color: "coral", zIndex: 2, marginTop: '100px' }}>Hi!</Title>
                 <h1 style={{ color: "coral", zIndex: 2 }}>
                   I am Mayank Pathela!
               </h1>
@@ -159,7 +159,7 @@ class Introduction extends React.PureComponent<any, any> {
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    width: "8em"
+                    width: "12em"
                   }}
                 >
                   <a
@@ -177,6 +177,9 @@ class Introduction extends React.PureComponent<any, any> {
                       theme="filled"
                       style={{ fontSize: "2em" }}
                     />
+                  </a>
+                  <a href="https://drive.google.com/file/d/1_Htr47Ih3liugjNelTs9o9ymavSafr0x/view?usp=sharing" style={{ zIndex: 1 }}>
+                    <Tooltip title="Resume"><Icon type="paper-clip" style={{ fontSize: "2em" }} /></Tooltip>
                   </a>
                 </div>
               </>
