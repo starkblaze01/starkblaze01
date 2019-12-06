@@ -178,7 +178,7 @@ class Introduction extends React.PureComponent<any, any> {
                       style={{ fontSize: "2em" }}
                     />
                   </a>
-                  <a href="https://drive.google.com/file/d/1_Htr47Ih3liugjNelTs9o9ymavSafr0x/view?usp=sharing" style={{ zIndex: 1 }}>
+                  <a href="https://drive.google.com/file/d/1HbWleqdOJPoD0OnSK-4BNuadK7_BrUd3/view?usp=sharing" style={{ zIndex: 1 }}>
                     <Tooltip title="Resume"><Icon type="paper-clip" style={{ fontSize: "2em" }} /></Tooltip>
                   </a>
                 </div>
