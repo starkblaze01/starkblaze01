@@ -163,7 +163,7 @@ class Introduction extends React.PureComponent<any, any> {
                   }}
                 >
                   <a
-                    href="https://www.linkedin.com/in/mayank-pathela-1a165b154/"
+                    href="https://www.linkedin.com/in/mayank-pathela/"
                     style={{ zIndex: 2 }}
                   >
                     <Icon type="linkedin" style={{ fontSize: "2em" }} />
