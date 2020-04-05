@@ -1321,13 +1321,6 @@
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
 
-"@types/jss@*":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@types/jss/-/jss-10.0.0.tgz#bea379e2b64d0f0f0f9e9093471036643608c676"
-  integrity sha512-Obo9w999hf2Q4sU/MRT7iR1UazdvFK3pEdtB6BSfO0NbmDrVMQi+RgNts4DLmlFho5Uf1PG4cMKLT8POhb6utA==
-  dependencies:
-    jss "*"
-
 "@types/node@*":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.0.tgz#d11813b9c0ff8aaca29f04cbc12817f4c7d656e5"
@@ -1355,15 +1348,12 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-jss@^8.6.3":
-  version "8.6.4"
-  resolved "https://registry.yarnpkg.com/@types/react-jss/-/react-jss-8.6.4.tgz#4f1e170f14c59f583c901a1479e96f2db3d52ea6"
-  integrity sha512-LK55kG7YnEt0xmBZeZqCEHEkSx7Xm1WD0GxaOUxIeTQyrSE6h0K70cyrXCloivrZwDzXqcA78zBBB64gapASPQ==
+"@types/react-jss@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-jss/-/react-jss-10.0.0.tgz#ecfa9ba68dffb7a89f0c059f104623ee90c96413"
+  integrity sha512-xy3Y0RVEubCpaLIvyu8rMu5CDGHSv3TnbP7Ob++r85WlLRx13B0l1vGnifIzT8rDiOb2yMX2MZWFZH9l4l3p/A==
   dependencies:
-    "@types/jss" "*"
-    "@types/react" "*"
-    "@types/theming" "*"
-    csstype "^2.0.0"
+    react-jss "*"
 
 "@types/react-router-dom@^4.3.4":
   version "4.3.5"
@@ -1401,13 +1391,6 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
-
-"@types/theming@*":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/theming/-/theming-2.0.0.tgz#f2798b4b697abda80bc1798937d777ea60806bc5"
-  integrity sha512-HElAmEfMUCYMZXcx6jN0MiJayax8Gxz0A+ztHJOmBD26hKhDpxZ/4PAsUGmDGAE4zqBk+Qea7QHP8Q8048eC8A==
-  dependencies:
-    theming "*"
 
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.3"
@@ -3351,15 +3334,15 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   dependencies:
     cssom "0.3.x"
 
-csstype@^2.0.0, csstype@^2.6.5:
-  version "2.6.7"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.7.tgz#20b0024c20b6718f4eda3853a1f5a1cce7f5e4a5"
-  integrity sha512-9Mcn9sFbGBAdmimWb2gLVDtFJzeKtDGIr76TUqmjZrw9LFXBMSU70lcs+C0/7fyCd6iBDqmksUcCOUIkisPHsQ==
-
 csstype@^2.2.0:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
   integrity sha512-JsTaiksRsel5n7XwqPAfB0l3TFKdpjW/kgAELf9vrb5adGA7UCPLajKK5s3nFrcFm3Rkyp/Qkgl73ENc1UY3cA==
+
+csstype@^2.6.5:
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.7.tgz#20b0024c20b6718f4eda3853a1f5a1cce7f5e4a5"
+  integrity sha512-9Mcn9sFbGBAdmimWb2gLVDtFJzeKtDGIr76TUqmjZrw9LFXBMSU70lcs+C0/7fyCd6iBDqmksUcCOUIkisPHsQ==
 
 cyclist@~0.2.2:
   version "0.2.2"
@@ -6419,7 +6402,7 @@ jss-vendor-prefixer@^7.0.0:
   dependencies:
     css-vendor "^0.3.8"
 
-jss@*, jss@10.1.1:
+jss@10.1.1:
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/jss/-/jss-10.1.1.tgz#450b27d53761af3e500b43130a54cdbe157ea332"
   integrity sha512-Xz3qgRUFlxbWk1czCZibUJqhVPObrZHxY3FPsjCXhDld4NOj1BgM14Ir5hVm+Qr6OLqVljjGvoMcCdXNOAbdkQ==
@@ -9155,7 +9138,7 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-jss@^10.1.1:
+react-jss@*, react-jss@^10.1.1:
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/react-jss/-/react-jss-10.1.1.tgz#1877b3c8587eb39ef37d0ea58cdb4d0ac469cf5f"
   integrity sha512-GCSKkyj6/bDNNgK1KtaU1FbTAKJ7CQE83p34qKpCc4tVPRi1wCfopyKot1cW/YYJizqltc2MaKzGqFK5eZhBSQ==
@@ -10508,7 +10491,7 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-theming@*, theming@3.2.0:
+theming@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/theming/-/theming-3.2.0.tgz#237b13ae46e0596a7d1dc2ce4a31bcfce52cad8e"
   integrity sha512-n0fSNYXkX63rcFBBeAthy14IcgPZLHp0OGkGZheaj64j7cBoP7INLd6+7HIXqWVjFn1M5cYSiZ1nszi+jo/Szg==
