@@ -1,12 +1,13 @@
 import * as React from "react";
 import injectSheet from "react-jss";
-import Particle from "./Particles";
+import Particle from "./Particle";
 import ParticlesDark from "./ParticlesDark";
-import { Typography, Switch, Icon, Tooltip } from "antd";
+import { Typography, Switch, Tooltip } from "antd";
 import { getAIRepodetails, getJeneretaRepoDetails, getSentimentRepoDetails } from '../actions/gitrepoAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Spin } from 'antd';
+import { SmileOutlined, SmileFilled, StarFilled, LinkedinOutlined, GithubOutlined, TwitterCircleFilled, PaperClipOutlined } from '@ant-design/icons'
 // import { Link } from "react-router-dom";
 // import { useTransition, animated } from "react-spring";
 
@@ -82,8 +83,8 @@ class Introduction extends React.PureComponent<any, any> {
         {this.state.mode ? <Particle /> : <ParticlesDark />}
         <div className={classes.switch}>
           <Switch
-            checkedChildren={<Icon type="smile" />}
-            unCheckedChildren={<Icon type="smile" theme="filled" />}
+            checkedChildren={<SmileOutlined />}
+            unCheckedChildren={<SmileFilled />}
             onChange={() => {
               this.setState({ mode: !this.state.mode });
             }}
@@ -106,7 +107,7 @@ class Introduction extends React.PureComponent<any, any> {
                     <br />
                     <div> Description: {sentiment.description}</div>
                     <br />
-                    Star Me:<a href={sentiment.html_url}><Icon type="star" theme="filled" /></a>
+                    Star Me:<a href={sentiment.html_url}><StarFilled /></a>
                   </div>
                 }
               </div>
@@ -123,7 +124,7 @@ class Introduction extends React.PureComponent<any, any> {
                     <br />
                     <div> Description: {jenereta.description}</div>
                     <br />
-                    Star Me:<a href={jenereta.html_url}><Icon type="star" theme="filled" /></a>
+                    Star Me:<a href={jenereta.html_url}><StarFilled /></a>
                   </div>
                 }
               </div>
@@ -140,7 +141,7 @@ class Introduction extends React.PureComponent<any, any> {
                     <br />
                     <div> Description: {ai.description}</div>
                     <br />
-                    Star Me:<a href={ai.html_url}><Icon type="star" theme="filled" /></a>
+                    Star Me:<a href={ai.html_url}><StarFilled /></a>
                   </div>
                 }
               </div>
@@ -166,20 +167,16 @@ class Introduction extends React.PureComponent<any, any> {
                     href="https://www.linkedin.com/in/mayank-pathela/"
                     style={{ zIndex: 2 }}
                   >
-                    <Icon type="linkedin" style={{ fontSize: "2em" }} />
+                    <LinkedinOutlined style={{ fontSize: "2em" }}/>
                   </a>
                   <a href="https://github.com/starkblaze01/" style={{ zIndex: 1 }}>
-                    <Icon type="github" style={{ fontSize: "2em" }} />
+                    <GithubOutlined style={{ fontSize: "2em" }}/>
                   </a>
                   <a href="https://twitter.com/StarkBlaze01" style={{ zIndex: 1 }}>
-                    <Icon
-                      type="twitter-circle"
-                      theme="filled"
-                      style={{ fontSize: "2em" }}
-                    />
+                    <TwitterCircleFilled style={{ fontSize: "2em" }}/>
                   </a>
                   <a href="https://drive.google.com/file/d/1divtO8ndNi68e9FdijrhT3oAIuMXh2Zj/view?usp=sharing" style={{ zIndex: 1 }}>
-                    <Tooltip title="Resume"><Icon type="paper-clip" style={{ fontSize: "2em" }} /></Tooltip>
+                    <Tooltip title="Resume"><PaperClipOutlined style={{ fontSize: "2em" }}/></Tooltip>
                   </a>
                 </div>
               </>
