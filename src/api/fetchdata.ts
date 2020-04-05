@@ -1,7 +1,7 @@
 import { GIT_BASE_URL } from './baseURL';
 import { SENTIMENT_ANALYZER, AI_CODES, JENERETA } from './routes';
 import axios from 'axios';
-axios.defaults.headers.common['Authorization'] = '419b11aca013fd2747e1a360d43b5cb98807e4f0';
+axios.defaults.headers.common['Authorization'] = process.env.REACT_APP_OAUTH_TOKEN;
 
 export const fetchSentimentRepoData = async () => {
     try {
@@ -15,6 +15,7 @@ export const fetchSentimentRepoData = async () => {
     } catch (err) {
         console.log(err);
     }
+    console.log(process.env.REACT_APP_OAUTH_TOKEN)
 }
 
 export const fetchJeneretaRepoData = async () => {
