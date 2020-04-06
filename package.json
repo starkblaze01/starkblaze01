@@ -14,7 +14,7 @@
     "antd": "^4.0.0",
     "axios": "^0.19.0",
     "jss-preset-default": "^4.5.0",
-    "react": "^16.8.6",
+    "react": "^16.13.1",
     "react-dom": "^16.8.6",
     "react-particles-js": "^3.0.1",
     "react-jss": "^10.1.1",
