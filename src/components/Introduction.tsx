@@ -175,7 +175,7 @@ class Introduction extends React.PureComponent<any, any> {
                   <a href="https://twitter.com/StarkBlaze01" style={{ zIndex: 1 }}>
                     <TwitterCircleFilled style={{ fontSize: "2em" }}/>
                   </a>
-                  <a href="https://drive.google.com/file/d/1divtO8ndNi68e9FdijrhT3oAIuMXh2Zj/view?usp=sharing" style={{ zIndex: 1 }}>
+                  <a href="https://drive.google.com/file/d/1jfzHUiLJATl27dqZBh8KGaR48Gqf8Lqe/view?usp=sharing" style={{ zIndex: 1 }}>
                     <Tooltip title="Resume"><PaperClipOutlined style={{ fontSize: "2em" }}/></Tooltip>
                   </a>
                 </div>
