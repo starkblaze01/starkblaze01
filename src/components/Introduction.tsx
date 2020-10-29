@@ -2,18 +2,19 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import Particle from "./Particle";
 import ParticlesDark from "./ParticlesDark";
-import { Typography, Switch, Tooltip } from "antd";
+import { Typography, Switch, Tooltip, Layout, Spin, Menu } from "antd";
 import { getAIRepodetails, getJeneretaRepoDetails, getSentimentRepoDetails } from '../actions/gitrepoAction';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Spin } from 'antd';
-import { SmileOutlined, SmileFilled, StarFilled, LinkedinOutlined, GithubOutlined, TwitterCircleFilled, PaperClipOutlined } from '@ant-design/icons'
-// import { Link } from "react-router-dom";
-// import { useTransition, animated } from "react-spring";
+import { SmileOutlined, SmileFilled, StarFilled, LinkedinOutlined, GithubOutlined, TwitterCircleFilled, PaperClipOutlined, HeartTwoTone } from '@ant-design/icons'
+import Projects from './Projects';
+
+const { Header, Content, Footer } = Layout;
+const {Item} = Menu;
 
 const styles = (theme: any) => ({
   align: {
-    zIndex: 3,
+    zIndex: 2,
     fontColor: "blue",
     textAlign: "center",
     display: "flex",
@@ -51,20 +52,6 @@ const styles = (theme: any) => ({
 });
 const { Title } = Typography;
 
-// const Animate: React.SFC<any> = (props: any) => {
-//   const [items, set] = React.useState(["1", "2", "3", "4"]);
-//   const transitions = useTransition(items, item => item, {
-//     from: { transform: "translate3d(0,-40px,0)" },
-//     enter: { transform: "translate3d(0,0px,0)" },
-//     leave: { transform: "translate3d(0,-40px,0)" }
-//   });
-//   return transitions.map(({ item, props, key }) => (
-//     <animated.div key={key} style={props}>
-//       {item}
-//     </animated.div>
-//   ));
-// };
-
 class Introduction extends React.PureComponent<any, any> {
 
   async componentDidMount() {
@@ -79,9 +66,24 @@ class Introduction extends React.PureComponent<any, any> {
   render() {
     const { classes, sentiment, ai, jenereta } = this.props;
     return (
-      <>
-        {this.state.mode ? <Particle /> : <ParticlesDark />}
-        <div className={classes.switch}>
+      <Layout>
+        {/* {this.state.mode ? <Particle /> : <ParticlesDark />} */}
+        <ParticlesDark/>
+        <Header style={{display:'flex', justifyContent:'space-between', zIndex: 2}}>
+          <div></div>
+          <Menu theme="dark" mode="horizontal" >
+            <Item key="about">
+              About
+            </Item>
+            <Item key="projects">
+              Projects
+            </Item>
+            <Item>Will see</Item>
+          <Item key="switch">
+            
+          </Item>
+          </Menu>
+          <div>
           <Switch
             checkedChildren={<SmileOutlined />}
             unCheckedChildren={<SmileFilled />}
@@ -89,9 +91,37 @@ class Introduction extends React.PureComponent<any, any> {
               this.setState({ mode: !this.state.mode });
             }}
           />
-        </div>
-        <div className={classes.align}>
-          <div style={{ position: 'fixed', width: '100%' }}>
+          </div>
+        </Header>
+        <Content className={classes.align}>
+            <Title style={{ color: "coral", marginTop: '100px' }}>Hi!</Title>
+            <h1 style={{ color: "coral" }}>
+              I am Mayank Pathela!
+              </h1>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "12em"
+              }}
+            >
+              <a
+                href="https://www.linkedin.com/in/mayank-pathela/"
+              >
+                <LinkedinOutlined style={{ fontSize: "2em" }} />
+              </a>
+              <a href="https://github.com/starkblaze01/" >
+                <GithubOutlined style={{ fontSize: "2em" }} />
+              </a>
+              <a href="https://twitter.com/StarkBlaze01" >
+                <TwitterCircleFilled style={{ fontSize: "2em" }} />
+              </a>
+              <a href="https://drive.google.com/file/d/1jfzHUiLJATl27dqZBh8KGaR48Gqf8Lqe/view?usp=sharing" >
+                <Tooltip title="Resume"><PaperClipOutlined style={{ fontSize: "2em" }} /></Tooltip>
+              </a>
+            </div>
+          <div style={{ width: '100%' }}>
+            <Projects/>
             <Title>My Projects and Repos</Title>
             <div className={classes.cards}>
               <div className={classes.card}>
@@ -147,42 +177,11 @@ class Introduction extends React.PureComponent<any, any> {
               </div>
             </div>
           </div>
-          {/* <Animate /> */}
-          {this.state.mode ? (
-            ""
-          ) : (
-              <>
-                <Title style={{ color: "coral", zIndex: 2, marginTop: '100px' }}>Hi!</Title>
-                <h1 style={{ color: "coral", zIndex: 2 }}>
-                  I am Mayank Pathela!
-              </h1>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    width: "12em"
-                  }}
-                >
-                  <a
-                    href="https://www.linkedin.com/in/mayank-pathela/"
-                    style={{ zIndex: 2 }}
-                  >
-                    <LinkedinOutlined style={{ fontSize: "2em" }}/>
-                  </a>
-                  <a href="https://github.com/starkblaze01/" style={{ zIndex: 1 }}>
-                    <GithubOutlined style={{ fontSize: "2em" }}/>
-                  </a>
-                  <a href="https://twitter.com/StarkBlaze01" style={{ zIndex: 1 }}>
-                    <TwitterCircleFilled style={{ fontSize: "2em" }}/>
-                  </a>
-                  <a href="https://drive.google.com/file/d/1jfzHUiLJATl27dqZBh8KGaR48Gqf8Lqe/view?usp=sharing" style={{ zIndex: 1 }}>
-                    <Tooltip title="Resume"><PaperClipOutlined style={{ fontSize: "2em" }}/></Tooltip>
-                  </a>
-                </div>
-              </>
-            )}
-        </div>
-      </>
+        </Content>
+        <Footer style={{textAlign:'center', zIndex: 2, background: 'black'}}>
+          Made with <HeartTwoTone twoToneColor="#eb2f96" />
+        </Footer>
+      </Layout>
     );
   }
 }
