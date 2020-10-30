@@ -1,80 +1,84 @@
 import * as React from 'react';
 import injectSheet from "react-jss";
 import { Typography, Tooltip } from "antd";
-import { LinkedinOutlined, GithubOutlined, TwitterCircleFilled, PaperClipOutlined } from '@ant-design/icons'
+import { LinkedinOutlined, GithubOutlined, TwitterCircleFilled, PaperClipOutlined, CodeOutlined, InstagramOutlined } from '@ant-design/icons'
 
 const {Title} = Typography;
 const styles = (theme: any) => ({
-    align: {
-        zIndex: 3,
-        fontColor: "blue",
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        alignContent: "center",
-        verticleAlign: "middle !important",
-        height: "100vh",
-        paddingTop: "10%"
-    },
-    switch: {
-        display: "flex",
-        width: "100%",
-        justifyContent: "flex-end",
-        position: "fixed",
-        alignItems: "center",
-        alignContent: "center",
-        marginTop: "10px",
-        zIndex: 2,
-    },
-    cards: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        width: '70%',
-        margin: 'auto',
-        color: '#0057e3',
-    },
-    card: {
-        height: '300px',
-        width: '250px',
-        border: '1px solid #8f8f8f',
-        boxShadow: '5px 5px 5px 5px',
-        borderRadius: '10px 10px',
+  main: {
+    display: "flex",
+    justifyContent: "space-between",
+    maxWidth: '30em',
+    margin: 'auto',
+    paddingTop: '5em',
+  },
+  anchor: {
+    '&:hover': {
+      boxShadow: '1px 1px 1px 1px #34ebeb'
     }
+  },
+  textAnimation: {
+    animationDuration: '4s',
+    animationName: '$slidein',
+    // animationIterationCount: 'infinite',
+    // animationDirection: 'alternate',
+  },
+  '@keyframes slidein': {
+  from: {
+    marginLeft: '100%',
+    width: '300%',
+  },
+
+  to: {
+    marginLeft: '0%',
+    width: '100%',
+  },
+},
 });
 
 class Home extends React.PureComponent<any, any> {
-    state: any = {
-        name: '',
-    }
 
     render() {
+      const {classes} = this.props;
         return (
             <>
-            <Title style={{ color: "coral", marginTop: '100px' }}>Hi!</Title>
-            <h1 style={{ color: "coral" }}>
-                I am Mayank Pathela!
-              </h1>
+            <Title style={{ color: "coral", marginTop: '10px' }}>Hi!</Title>
+            <h1 style={{ color: "coral" }} className={classes.textAnimation}>
+              I am Mayank Pathela, a full-stack developer who keeps exploring new stuffs and read Physics in leisure time.
+            </h1>
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                width: "12em"
-              }}
+              className= {classes.main}
             >
               <a
                 href="https://www.linkedin.com/in/mayank-pathela/"
+                className={classes.anchor}
               >
-                <LinkedinOutlined style={{ fontSize: "2em" }} />
+                <Tooltip title="LinkedIn"><LinkedinOutlined style={{ fontSize: "2em" }} /></Tooltip>
               </a>
-              <a href="https://github.com/starkblaze01/" >
-                <GithubOutlined style={{ fontSize: "2em" }} />
+              <a href="https://github.com/starkblaze01/"
+                className={classes.anchor}
+              >
+                <Tooltip title="GitHub"><GithubOutlined style={{ fontSize: "2em" }} /></Tooltip>
               </a>
-              <a href="https://twitter.com/StarkBlaze01" >
-                <TwitterCircleFilled style={{ fontSize: "2em" }} />
+              <a href="https://twitter.com/StarkBlaze01"
+                className={classes.anchor}
+              >
+                <Tooltip title="Twitter"><TwitterCircleFilled style={{ fontSize: "2em" }} /></Tooltip>
               </a>
-              <a href="https://drive.google.com/file/d/1jfzHUiLJATl27dqZBh8KGaR48Gqf8Lqe/view?usp=sharing" >
+              <a href="https://drive.google.com/file/d/1jfzHUiLJATl27dqZBh8KGaR48Gqf8Lqe/view?usp=sharing"
+                className={classes.anchor}
+              >
                 <Tooltip title="Resume"><PaperClipOutlined style={{ fontSize: "2em" }} /></Tooltip>
+              </a>
+              <a href="https://sourcerer.io/starkblaze01" className={classes.anchor}>
+                <Tooltip title="sourcerer.io">
+                  <CodeOutlined style={{fontSize: "2em"}}/>
+                </Tooltip>
+              </a>
+              <a href="https://www.instagram.com/starkblaze01/" className={classes.anchor}>
+                <Tooltip title="Instagram">
+                  <InstagramOutlined style={{fontSize: "2em"}}/>
+                </Tooltip>
               </a>
             </div>
             </>
