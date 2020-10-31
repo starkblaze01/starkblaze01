@@ -65,7 +65,7 @@ class Home extends React.PureComponent<any, any> {
               >
                 <Tooltip title="Twitter"><TwitterCircleFilled style={{ fontSize: "2em" }} /></Tooltip>
               </a>
-              <a href="https://drive.google.com/file/d/1jfzHUiLJATl27dqZBh8KGaR48Gqf8Lqe/view?usp=sharing"
+              <a href="https://drive.google.com/file/d/1tMcgHjGKg0E_GniUUKGbmNz6JPk6SUTr/view?usp=sharing"
                 className={classes.anchor}
               >
                 <Tooltip title="Resume"><PaperClipOutlined style={{ fontSize: "2em" }} /></Tooltip>

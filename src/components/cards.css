@@ -1,5 +1,5 @@
 .box{
-  /* position: absolute; */
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -38,6 +38,7 @@
   left:15px;
   right:15px;
   bottom:15px;
+  color: #50dfdb;
   border:1px solid #f0a591;
   padding:20px;
   text-align:center;

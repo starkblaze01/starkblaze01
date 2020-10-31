@@ -27,12 +27,13 @@ const styles = (theme: any) => ({
   footer: {
     textAlign: 'center',
     zIndex: 2,
-    background: 'black',
+    background: '#1c211d',
     bottom: 0,
     position: 'fixed',
     left: 0,
     width: '100%',
     color: '#e36600',
+    maxHeight: '5px'
   }
 });
 
@@ -40,7 +41,7 @@ class Introduction extends React.PureComponent<any, any> {
 
   state: any = {
     mode: false,
-    page: 'projects'
+    page: 'home'
   };
 
   handleClick = (e:any) => {
@@ -58,7 +59,7 @@ class Introduction extends React.PureComponent<any, any> {
     const { classes } = this.props;
     return (
       <Layout>
-        {!this.state.mode ? <Particle /> : <ParticlesDark />}
+        {this.state.mode ? <Particle /> : <ParticlesDark />}
         <Header style={{display:'flex', justifyContent:'space-between', zIndex: 2}}>
           <div></div>
           <Menu theme="dark" mode="horizontal" onClick={this.handleClick} selectedKeys={[this.state.page]}>
@@ -66,7 +67,7 @@ class Introduction extends React.PureComponent<any, any> {
               Home
             </Item>
             <Item key="about">
-              About
+              About Me
             </Item>
             <Item key="projects">
               Projects

@@ -56,7 +56,7 @@ class Particle extends React.PureComponent<any, any> {
       line_linked: {
         enable: true,
         distance: 120,
-        color: "#FFFFFF",
+        color: "#000",
         opacity: 0.4,
         width: 0.4
       },
@@ -79,13 +79,8 @@ class Particle extends React.PureComponent<any, any> {
       events: {
         onhover: {
           enable: true,
-          mode: "bubble"
-        },
-        onclick: {
-          enable: true,
           mode: "repulse"
-        },
-        resize: true
+        }
       },
       modes: {
         bubble: {

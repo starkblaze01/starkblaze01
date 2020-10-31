@@ -1,53 +1,46 @@
 import * as React from 'react';
 import injectSheet from "react-jss";
+import {Typography, Divider} from 'antd';
 
 const styles = (theme: any) => ({
-    align: {
-        zIndex: 3,
-        fontColor: "blue",
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        alignContent: "center",
-        verticleAlign: "middle !important",
-        height: "100vh",
-        paddingTop: "10%"
-    },
-    switch: {
-        display: "flex",
-        width: "100%",
-        justifyContent: "flex-end",
-        position: "fixed",
-        alignItems: "center",
-        alignContent: "center",
-        marginTop: "10px",
-        zIndex: 2,
-    },
-    cards: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        width: '70%',
-        margin: 'auto',
-        color: '#0057e3',
-    },
-    card: {
-        height: '300px',
-        width: '250px',
-        border: '1px solid #8f8f8f',
-        boxShadow: '5px 5px 5px 5px',
-        borderRadius: '10px 10px',
+    paragraph: {
+        color: '#50dfdb',
+        fontSize: '20px',
+        maxWidth: '600px',
+        background: 'rgb(23, 32, 90, 0.5)',
     }
 });
 
+const {Title, Paragraph} = Typography;
 class About extends React.PureComponent<any, any> {
     state: any = {
         name: '',
     }
 
     render() {
+        const {classes} = this.props;
         return (
-            <>Here will be the projects</>
+            <div style={{paddingBottom: '100px'}}>
+                <Title style={{ color: 'coral' }} code={true}>A litle about me:</Title>
+                <Paragraph className={classes.paragraph} strong={true} code={true}> Hi, I am Mayank Pathela, a full-stack developer who is curious all the time and want to explore everything.!
+                    I have been doing Web Development since 2017, and have used React for most of my projects. I also have a Nanodegree in Deep Learning,
+                    and love to implement AI algorithms also read research papers sometimes. I love to watch Anime, read books, play football, and discuss Physics.
+                </Paragraph>
+                <Divider orientation="center" style={{ background: 'coral'}}/>
+                <Title style={{ color: 'coral' }} code={true}>My Motivation:</Title>
+                <Paragraph className={classes.paragraph} strong={true} code={true}> 
+                    I got my first computer when I was 7 years old and have always been
+                    amazed by the power of Computers and the Internet. They can do anything which we can think of. My love for computers and father's unfulfilled dream
+                    to become an Engineer motivated me to pursue Engineering.
+                </Paragraph>
+                <Divider orientation="center" style={{ background: 'coral' }} />
+                <Title style={{ color: 'coral' }} code={true}>My Ideology:</Title>
+                <Paragraph className={classes.paragraph} strong={true} code={true}> 
+                    Nature itself was in Equilibrium until the human's greed kicked in. We have been exploiting nature since ages, but now the time has come for us to change.
+                    Nature needs time to get adapted to human's unsatisfied needs. We can't change everyone, but we do can start by changing ourselves.
+                    As an engineer, it's our job to invent, design, and build things for everyone. Let's do our best not to build anything which can harm our environment.
+                </Paragraph>                
+            </div>
         );
     }
 }
