@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: "Indie Flower", cursive !important;
+  font-family: 'Roboto Slab', serif;
+  color: tomato;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

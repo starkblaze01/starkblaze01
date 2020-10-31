@@ -1,4 +1,4 @@
-import { GIT_BASE_URL } from './baseURL';
+import { GIT_BASE_URL, REPOS_BASE_URL } from './baseURL';
 import { SENTIMENT_ANALYZER, AI_CODES, JENERETA } from './routes';
 import axios from 'axios';
 axios.defaults.headers.common['Authorization'] = process.env.REACT_APP_OAUTH_TOKEN;
@@ -44,4 +44,19 @@ export const fetchAIRepoData = async () => {
     } catch (err) {
         console.log(err);
     }
+}
+
+export const fetchAllRepos = async () => {
+    try {
+        const res = await axios.get(
+            `${REPOS_BASE_URL}`
+        );
+        return {
+            isSuccess: true,
+            data: res.data,
+        }
+    } catch (err) {
+        console.log(err)
+    }
+
 }
