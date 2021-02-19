@@ -1,7 +1,5 @@
 ### <div align="center">Hi, I'm Mayank Pathela, a full-stack developer and ML practitioner. 👨‍💻 Working in the Pokémon World! 🐉</div>  
   
-
-- 🔭 I’m currently looking for a full-time role.  
   
 
 - 🌱 I’m currently learning Kubernetes and Quantum Physics ✨  
@@ -16,7 +14,7 @@
 - ⚡ Fun fact: I am secretly working to change the world. 
 
 
-- 🔍 Find me: https://starkblaze01.netlify.com/  
+- 🔍 Find me: https://starkblaze01.netlify.app/
 
 <br/>  
 
