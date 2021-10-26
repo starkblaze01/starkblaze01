@@ -2,11 +2,12 @@
   
   
 
-- 🌱 I’m currently learning Kubernetes and Quantum Physics ✨  
   
+-  :briefcase:  Working as a Full-Stack Developer [@Tvarit Gmbh](https://github.com/tvarit-foggy/), past Senior Frontend Developer.
 
-- ❓ Discuss about anything related to MERN stack, AI algorithms and Physics!  
+- ❓ Discuss about anything related to JS, System Architecture, Building Solutions, AI algorithms and Physics!  
   
+- 🌱 Learning new things everyday ✨
 
 -  ❤️  Anime, Football, TV series, Marvel.  
   
@@ -14,7 +15,7 @@
 - ⚡ Fun fact: I am secretly working to change the world. 
 
 
-- 🔍 Find me: https://starkblaze01.netlify.app/
+- 🔍 Find me: https://starkblaze01.dev/
 
 <br/>  
 
@@ -86,7 +87,14 @@
 <img src=https://img.shields.io/badge/kaggle-%2344BAE8.svg?&style=for-the-badge&logo=kaggle&logoColor=white alt=kaggle style="margin-bottom: 5px;" />
 </a>  
 </div>  
-  
+
+<br/>
+
+## Found my work useful? Wanna Buy me a Coffee ?
+<div align="center">
+<a href="https://www.buymeacoffee.com/starkblaze01" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+</div>  
+
 
 <br/>  
 
