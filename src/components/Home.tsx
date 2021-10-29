@@ -44,7 +44,7 @@ class Home extends React.PureComponent<any, any> {
             <>
             <Title style={{ color: "coral", marginTop: '10px' }}>Hi!</Title>
             <h1 style={{ color: "coral" }} className={classes.textAnimation}>
-              I am Mayank Pathela, a full-stack developer who keeps exploring new stuffs and read Physics in leisure time.
+            I am Mayank Pathela, a full-stack developer who keeps exploring new stuff and reads Physics in leisure.
             </h1>
             <div
               className= {classes.main}
