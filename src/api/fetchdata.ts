@@ -49,7 +49,7 @@ export const fetchAIRepoData = async () => {
 export const fetchAllRepos = async () => {
     try {
         const res = await axios.get(
-            `${REPOS_BASE_URL}`
+            `${REPOS_BASE_URL}?per_page=100`
         );
         return {
             isSuccess: true,
