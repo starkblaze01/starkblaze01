@@ -6,6 +6,7 @@ import { JssProvider } from "react-jss";
 import ThemeProvider from "./components/ThemeProvider";
 import { Provider } from "react-redux";
 import store from "./store/appStore";
+import './components/cards.css';
 
 const localJss = createJss({
   ...preset()

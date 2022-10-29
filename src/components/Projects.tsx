@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Spin, Typography } from 'antd';
 // import {  } from '@ant-design/icons'
-import './cards.css';
+
 
 const {Title}  = Typography;
 const styles = (theme: any) => ({
@@ -17,17 +17,13 @@ const styles = (theme: any) => ({
 });
 
 class Projects extends React.PureComponent<any, any> {
-    state: any = {
-        name: '',
-    }
     async componentDidMount() {
         await this.props.getAllRepoDetails();
     }
     render(){
-        const { classes, all } = this.props;
+        const { classes, all, loadingAll } = this.props;
         let fi = all ? all.filter((el:any)=> !el.fork && !el.private) : ''
         let arr = fi.length ? fi.sort((a: any, b: any) => { return b.stargazers_count - a.stargazers_count}) : ''
-        console.log(arr)
         let display = (arr && arr.length) ? arr.map((el:any) => 
             <div key={el.name} className="box">
                 <span ></span>
@@ -46,7 +42,7 @@ class Projects extends React.PureComponent<any, any> {
         return(
             <>
                 <Title style={{color: 'coral'}}>My Projects and Repos</Title>
-                {!(arr && arr.length) ? <Spin size="large"/> : ''}
+                {loadingAll ? <Spin size="large"/> : ''}
                 <div className={classes.grid}>
                     {display}
                 </div>
