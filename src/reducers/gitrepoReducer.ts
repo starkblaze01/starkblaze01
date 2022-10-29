@@ -1,7 +1,8 @@
 import {
     GET_AI_CODES, GET_JENERETA, GET_SENTIMENT_ANALYZER, ENABLE_AI_LOADING, ENABLE_JENERETA_LOADING,
     ENABLE_SENTIMENT_LOADING, DISABLE_AI_LOADING, DISABLE_JENERETA_LOADING, DISABLE_SENTIMENT_LOADING,
-    GET_ALL_REPOS, ENABLE_ALL_REPOS_LOADING, DISABLE_ALL_REPOS_LOADING
+    GET_ALL_REPOS, ENABLE_ALL_REPOS_LOADING, DISABLE_ALL_REPOS_LOADING, GET_BLOGS, ENABLE_BLOGS_LOADING,
+    DISABLE_BLOGS_LOADING
 } from '../actions/constants';
 const defaultState: any = {
     loadingSentiment: true,
@@ -12,6 +13,8 @@ const defaultState: any = {
     jenereta: '',
     all: '',
     loadingAll: true,
+    blog: [],
+    loadingBlog: true,
 }
 
 export default function (state: any = defaultState, action: any) {
@@ -86,7 +89,25 @@ export default function (state: any = defaultState, action: any) {
                 ...state,
                 loadingAll: false,
             }
-        }    
+        }
+        case GET_BLOGS: {
+            return {
+                ...state,
+                blog: action.data,
+            }
+        }
+        case ENABLE_BLOGS_LOADING: {
+            return {
+                ...state,
+                loadingBlog: true,
+            }
+        }
+        case DISABLE_BLOGS_LOADING: {
+            return {
+                ...state,
+                loadingBlog: false,
+            }
+        }
         default: {
             return state;
         }

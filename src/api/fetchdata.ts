@@ -1,4 +1,4 @@
-import { GIT_BASE_URL, REPOS_BASE_URL } from './baseURL';
+import { GIT_BASE_URL, REPOS_BASE_URL, AWS_LAMBDA_FUNCTION_BLOGS_URL } from './baseURL';
 import { SENTIMENT_ANALYZER, AI_CODES, JENERETA } from './routes';
 import axios from 'axios';
 axios.defaults.headers.common['Authorization'] = process.env.REACT_APP_OAUTH_TOKEN;
@@ -49,7 +49,7 @@ export const fetchAIRepoData = async () => {
 export const fetchAllRepos = async () => {
     try {
         const res = await axios.get(
-            `${REPOS_BASE_URL}?per_page=100`
+            `${REPOS_BASE_URL}?per_page=200`
         );
         return {
             isSuccess: true,
@@ -58,5 +58,18 @@ export const fetchAllRepos = async () => {
     } catch (err) {
         console.log(err)
     }
+}
 
+export const fetchAllBlogs = async () => {
+    try {
+        const res = await axios.get(
+            `${AWS_LAMBDA_FUNCTION_BLOGS_URL}`
+        );
+        return {
+            isSuccess: true,
+            data: res.data,
+        }
+    } catch (err) {
+        console.log(err)
+    }
 }
