@@ -1,19 +1,16 @@
-### <div align="center">Hi, I'm Mayank Pathela, a full-stack developer and ML practitioner. 👨‍💻 Working in the Pokémon World! 🐉</div>  
-  
+### <div align="center">Hi, I'm Mayank Pathela, a curious full-stack developer, working👨‍💻 from the Pokémon World! 🐉</div>  
   
 
   
--  :briefcase:  Working as a Full-Stack Developer [@Tvarit Gmbh](https://github.com/tvarit-foggy/), past Senior Frontend Developer.
+-  :briefcase:  Working as a Full-Stack Developer II, past Senior Frontend Developer.
 
-- ❓ Discuss about anything related to JS, System Architecture, Building Solutions, AI algorithms and Physics!  
-  
+- ❓ Discuss about anything related to JS, System Architecture, Building Solutions, AI algorithms, Japan and Physics!  
+
 - 🌱 Learning new things everyday ✨
 
--  ❤️  Anime, Football, TV series, Marvel.  
-  
+-  ❤️  Anime, Travel, Football, TV series, Marvel.  
 
-- ⚡ Fun fact: I am secretly working to change the world. 
-
+- ⚡ Fun fact: I love to learn about absolutely anything. 
 
 - 🔍 Find me: https://starkblaze01.dev/
 
@@ -85,7 +82,10 @@
 </a>
 <a href="https://www.kaggle.com/starkblaze01" target="_blank">
 <img src=https://img.shields.io/badge/kaggle-%2344BAE8.svg?&style=for-the-badge&logo=kaggle&logoColor=white alt=kaggle style="margin-bottom: 5px;" />
-</a>  
+</a>
+<a href="https://instagram.com/starkblaze01" target="_blank">
+<img src=https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white alt=instagram style="margin-bottom: 5px;" />
+</a> 
 </div>  
 
 <br/>
