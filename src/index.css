@@ -1,12 +1,140 @@
-body {
-  margin: 0;
-  font-family: 'Roboto Slab', serif;
-  color: tomato;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  [data-theme="dark"] {
+    --c-ink: 10 10 15;
+    --c-ink2: 20 20 28;
+    --c-cream: 242 234 211;
+    --c-off: 233 231 225;
+    --c-muted: 154 152 143;
+    --c-line: 255 255 255;
+    --c-surface: 255 255 255;
+    --line-alpha: 0.06;
+    --surface-alpha: 0.02;
+  }
+  [data-theme="light"] {
+    --c-ink: 248 244 233;
+    --c-ink2: 255 252 244;
+    --c-cream: 20 18 24;
+    --c-off: 34 32 40;
+    --c-muted: 108 104 96;
+    --c-line: 10 10 15;
+    --c-surface: 10 10 15;
+    --line-alpha: 0.10;
+    --surface-alpha: 0.03;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    background: rgb(var(--c-ink));
+    color: rgb(var(--c-off));
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.65;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Fraunces", ui-serif, Georgia, serif;
+    font-variation-settings: "SOFT" 50, "opsz" 48;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: theme("colors.red.pokeball");
+    color: theme("colors.cream");
+  }
+  :focus-visible {
+    outline: 2px solid theme("colors.red.pokeball");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a {
+    color: inherit;
+  }
+  code,
+  kbd {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@layer components {
+  .prose-ink {
+    @apply max-w-prose leading-[1.7] text-off/85;
+  }
+  .prose-ink p + p {
+    @apply mt-4;
+  }
+  .link-underline {
+    @apply underline decoration-red-pokeball/50 decoration-2 underline-offset-4 transition-colors hover:decoration-red-pokeball;
+  }
+  .kbd {
+    border: 1px solid rgb(var(--c-line) / calc(var(--line-alpha) * 2));
+    background: rgb(var(--c-surface) / calc(var(--surface-alpha) * 3));
+    @apply rounded px-1.5 py-0.5 text-[0.75em] font-mono text-off/80;
+  }
+  .card-surface {
+    border: 1px solid rgb(var(--c-line) / var(--line-alpha));
+    background: rgb(var(--c-surface) / var(--surface-alpha));
+    @apply rounded-xl shadow-card;
+  }
+}
+
+/* Theme-aware overrides for the white/X utilities used across the app */
+[data-theme="light"] .border-white\/5 {
+  border-color: rgb(var(--c-line) / 0.1);
+}
+[data-theme="light"] .border-white\/10 {
+  border-color: rgb(var(--c-line) / 0.15);
+}
+[data-theme="light"] .bg-white\/5 {
+  background-color: rgb(var(--c-surface) / 0.04);
+}
+[data-theme="light"] .bg-white\/\[0\.02\] {
+  background-color: rgb(var(--c-surface) / 0.03);
+}
+[data-theme="light"] .ring-ink {
+  --tw-ring-color: rgb(var(--c-ink));
+}
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.55ch;
+  margin-left: 0.1ch;
+  background: currentColor;
+  animation: cursor-blink 1s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
 }

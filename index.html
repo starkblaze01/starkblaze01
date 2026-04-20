@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("sb-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="https://starkblaze01.dev/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Mayank Pathela — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Mayank Pathela — Full Stack Developer at Derq, Dubai. MSCS candidate at Georgia Tech. Past GSoC and Outreachy mentor. Writes about JavaScript, systems, and AI."
+    />
+    <meta name="author" content="Mayank Pathela" />
+    <meta
+      name="keywords"
+      content="Mayank Pathela, starkblaze01, full stack developer, React, TypeScript, AWS, Dubai, Georgia Tech OMSCS, GSoC mentor"
+    />
+
+    <meta property="og:url" content="https://starkblaze01.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mayank Pathela — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full Stack Developer at Derq, Dubai. Georgia Tech MSCS. GSoC + Outreachy mentor. Writes on JavaScript, systems, and AI."
+    />
+    <meta property="og:image" content="https://starkblaze01.dev/LOGO_MP.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="starkblaze01.dev" />
+    <meta property="twitter:url" content="https://starkblaze01.dev/" />
+    <meta name="twitter:title" content="Mayank Pathela — Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Full Stack Developer at Derq, Dubai. Georgia Tech MSCS. GSoC + Outreachy mentor. Writes on JavaScript, systems, and AI."
+    />
+    <meta name="twitter:image" content="https://starkblaze01.dev/LOGO_MP.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mayank Pathela",
+        "alternateName": "starkblaze01",
+        "url": "https://starkblaze01.dev/",
+        "image": "https://starkblaze01.dev/LOGO_MP.png",
+        "jobTitle": "Full Stack Developer",
+        "worksFor": { "@type": "Organization", "name": "Derq" },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology" },
+          { "@type": "CollegeOrUniversity", "name": "Indian Institute of Information Technology Vadodara" }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dubai",
+          "addressCountry": "AE"
+        },
+        "sameAs": [
+          "https://github.com/starkblaze01",
+          "https://www.linkedin.com/in/mayank-pathela/",
+          "https://dev.to/starkblaze01",
+          "https://twitter.com/StarkBlaze01",
+          "https://www.instagram.com/starkblaze01",
+          "https://www.kaggle.com/starkblaze01",
+          "https://stackoverflow.com/users/9543932/mayank-pathela",
+          "https://www.youtube.com/@MayankPathela"
+        ],
+        "knowsAbout": [
+          "Full Stack Development",
+          "TypeScript",
+          "React",
+          "Node.js",
+          "AWS",
+          "IoT",
+          "Distributed Systems",
+          "Deep Learning"
+        ]
+      }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTSLJC4Z73"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-KTSLJC4Z73");
+    </script>
+  </head>
+  <body>
+    <noscript>You need JavaScript to view this site.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

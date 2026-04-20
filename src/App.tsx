@@ -1,24 +1,41 @@
-import React from "react";
-import "antd/dist/antd.css";
-import { create as createJss } from "jss";
-import preset from "jss-preset-default";
-import { JssProvider } from "react-jss";
-import ThemeProvider from "./components/ThemeProvider";
-import { Provider } from "react-redux";
-import store from "./store/appStore";
-import './components/cards.css';
+import { lazy, Suspense } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { Spin } from "antd";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
 
-const localJss = createJss({
-  ...preset()
-});
-const App: React.FC = () => {
+const About = lazy(() => import("./pages/About"));
+const Work = lazy(() => import("./pages/Work"));
+const Projects = lazy(() => import("./pages/Projects"));
+const Writing = lazy(() => import("./pages/Writing"));
+const Timeline = lazy(() => import("./pages/Timeline"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+function PageFallback() {
   return (
-    <Provider store={store}>
-      <JssProvider jss={localJss}>
-        <ThemeProvider />
-      </JssProvider>
-    </Provider>
+    <div className="flex justify-center py-16">
+      <Spin />
+    </div>
   );
-};
+}
 
-export default App;
+function lazyRoute(el: JSX.Element) {
+  return <Suspense fallback={<PageFallback />}>{el}</Suspense>;
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={lazyRoute(<About />)} />
+        <Route path="work" element={lazyRoute(<Work />)} />
+        <Route path="projects" element={lazyRoute(<Projects />)} />
+        <Route path="writing" element={lazyRoute(<Writing />)} />
+        <Route path="blog" element={<Navigate to="/writing" replace />} />
+        <Route path="timeline" element={lazyRoute(<Timeline />)} />
+        <Route path="*" element={lazyRoute(<NotFound />)} />
+      </Route>
+    </Routes>
+  );
+}
