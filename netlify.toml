@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/api/blogs"
+  to = "https://5mmzndyrk3gouwywlnlaa4gae40vclhj.lambda-url.ap-south-1.on.aws/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

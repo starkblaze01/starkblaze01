@@ -11,6 +11,13 @@
 
 # production
 /build
+/dist
+*.tsbuildinfo
+
+# local agent / session state
+.agents
+.claude
+skills-lock.json
 
 # misc
 .DS_Store

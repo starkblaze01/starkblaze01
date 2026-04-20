@@ -2,13 +2,15 @@
   
 
   
--  :briefcase:  Working as a Full-Stack Developer II, past Senior Frontend Developer.
+-  :briefcase:  Full Stack Developer at Derq, Dubai. GSoC + Outreachy mentor.
 
-- ❓ Discuss about anything related to JS, System Architecture, Building Solutions, AI algorithms, Japan and Physics!  
+- 🎓 Part-time MSCS candidate at Georgia Tech (OMSCS).
+
+- ❓ Happy to talk JavaScript, system architecture, IoT/edge sync, AI, Japan, Physics, and markets.
 
 - 🌱 Learning new things everyday ✨
 
--  ❤️  Anime, Travel, Football, TV series, Marvel.  
+-  ❤️  Anime, travel, sci-fi & thrillers, Marvel, Japan.
 
 - ⚡ Fun fact: I love to learn about absolutely anything. 
 
@@ -85,7 +87,10 @@
 </a>
 <a href="https://instagram.com/starkblaze01" target="_blank">
 <img src=https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white alt=instagram style="margin-bottom: 5px;" />
-</a> 
+</a>
+<a href="https://www.youtube.com/@MayankPathela" target="_blank">
+<img src=https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white alt=youtube style="margin-bottom: 5px;" />
+</a>
 </div>  
 
 <br/>
@@ -105,10 +110,6 @@
 <br/>  
   
 ---
-
-<br/>  
-
-<div align="center"><img src="https://spotify-github-profile.vercel.app/api/view?uid=3156lobkb5rbsvj3py6rtycdxjxa&cover_image=true" /></div>  
 
 <br/>  
 
