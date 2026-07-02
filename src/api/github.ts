@@ -21,7 +21,7 @@ export type BlogPost = {
   tag_list?: string[];
 };
 
-const REPOS_URL = "https://api.github.com/users/starkblaze01/repos?per_page=200";
+const REPOS_URL = "https://api.github.com/users/starkblaze01/repos?per_page=100";
 const BLOGS_URL = "/api/blogs";
 
 export async function fetchAllRepos(): Promise<Repo[]> {

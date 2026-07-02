@@ -25,7 +25,7 @@ export default function Layout() {
         Skip to content
       </a>
 
-      <header className="border-b border-white/5 bg-ink/85 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-white/5 bg-ink/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
           <NavLink to="/" className="font-mono text-sm tracking-tight">
             <span className="text-red-pokeball">●</span>{" "}
@@ -76,7 +76,7 @@ export default function Layout() {
             </a>{" "}
             · Dubai, UAE
           </p>
-          <p className="mt-1 text-[0.7rem] text-off/40">
+          <p className="mt-1 hidden text-[0.7rem] text-off/40 [@media(hover:hover)]:block">
             Try <span className="kbd">↑ ↑ ↓ ↓ ← → ← → B A</span>
           </p>
         </div>
