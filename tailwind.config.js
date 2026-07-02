@@ -13,6 +13,8 @@ export default {
         cream: "rgb(var(--c-cream) / <alpha-value>)",
         off: "rgb(var(--c-off) / <alpha-value>)",
         muted: "rgb(var(--c-muted) / <alpha-value>)",
+        card: "rgb(var(--c-card) / <alpha-value>)",
+        cardink: "rgb(var(--c-card-ink) / <alpha-value>)",
         type: {
           electric: "#c8a227",
           psychic: "#c97a9a",
@@ -28,9 +30,9 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Fraunces", "ui-serif", "Georgia", "serif"],
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ["'JetBrains Mono'", "ui-monospace", "SFMono-Regular", "monospace"],
+        display: ["'Bricolage Grotesque'", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["'Schibsted Grotesk'", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["'Martian Mono'", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       fontSize: {
         "display-lg": ["clamp(2.5rem, 5vw + 1rem, 4.5rem)", { lineHeight: "1.05" }],

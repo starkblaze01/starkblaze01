@@ -38,7 +38,7 @@ function ThemedApp() {
           theme === "dark" ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
         token: {
           colorPrimary: "#e63946",
-          fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
+          fontFamily: "'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif",
         },
       }}
     >

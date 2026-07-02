@@ -1,3 +1,5 @@
+import PageHeader from "../components/PageHeader";
+
 type Entry = {
   year: string;
   title: string;
@@ -45,15 +47,12 @@ const ENTRIES: Entry[] = [
 export default function Timeline() {
   return (
     <div className="mx-auto max-w-3xl space-y-12">
-      <header className="max-w-prose">
-        <h1 className="font-display text-display-lg font-semibold text-cream">
-          Timeline
-        </h1>
-        <p className="mt-3 text-off/75">
+      <PageHeader entry="04" title="Timeline">
+        <p>
           What I&rsquo;ve shipped on this site, in order — a changelog going back
           to the first build.
         </p>
-      </header>
+      </PageHeader>
 
       <ol className="relative space-y-10 border-l border-white/10 pl-6">
         {ENTRIES.map((e) => (

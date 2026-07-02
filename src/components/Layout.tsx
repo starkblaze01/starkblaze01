@@ -4,12 +4,12 @@ import { useDocumentHead } from "../hooks/useDocumentHead";
 import { useTheme } from "../hooks/useTheme";
 
 const NAV = [
-  { to: "/", label: "Home", end: true },
-  { to: "/work", label: "Work" },
-  { to: "/projects", label: "Projects" },
-  { to: "/writing", label: "Writing" },
-  { to: "/timeline", label: "Timeline" },
-  { to: "/about", label: "About" },
+  { to: "/", label: "Home", num: null as string | null, end: true },
+  { to: "/work", label: "Work", num: "01" },
+  { to: "/projects", label: "Projects", num: "02" },
+  { to: "/writing", label: "Writing", num: "03" },
+  { to: "/timeline", label: "Timeline", num: "04" },
+  { to: "/about", label: "About", num: "05" },
 ];
 
 export default function Layout() {
@@ -40,12 +40,28 @@ export default function Layout() {
                   to={item.to}
                   end={item.end}
                   className={({ isActive }) =>
-                    `rounded-sm transition hover:text-red-pokeball ${
+                    `group rounded-sm transition hover:text-red-pokeball ${
                       isActive ? "text-red-pokeball" : "text-off/70"
                     }`
                   }
                 >
-                  {item.label}
+                  {({ isActive }) => (
+                    <>
+                      {item.num && (
+                        <span
+                          aria-hidden="true"
+                          className={`mr-1 font-mono text-[0.6rem] tracking-tight ${
+                            isActive
+                              ? "text-red-pokeball/80"
+                              : "text-off/35 group-hover:text-red-pokeball/60"
+                          }`}
+                        >
+                          {item.num}
+                        </span>
+                      )}
+                      {item.label}
+                    </>
+                  )}
                 </NavLink>
               ))}
             </nav>

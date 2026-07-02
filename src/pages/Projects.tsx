@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { Spin } from "antd";
+import PageHeader from "../components/PageHeader";
 import { loadRepos } from "../store/contentSlice";
 import { useAppDispatch, useAppSelector } from "../store";
 import type { Repo } from "../api/github";
@@ -113,15 +114,12 @@ export default function Projects() {
 
   return (
     <div className="space-y-10">
-      <header className="max-w-prose">
-        <h1 className="font-display text-display-lg font-semibold text-cream">
-          Projects
-        </h1>
-        <p className="mt-3 text-off/75">
+      <PageHeader entry="02" title="Projects">
+        <p>
           Open-source work, pulled live from GitHub. Each one gets a type — not
           because it&rsquo;s serious, but because it&rsquo;s fun.
         </p>
-      </header>
+      </PageHeader>
 
       {reposStatus === "loading" && (
         <div className="flex justify-center py-10">

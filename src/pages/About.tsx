@@ -23,16 +23,14 @@ export default function About() {
   return (
     <div className="mx-auto max-w-prose space-y-12">
       <header>
+        <p className="kicker">Entry 05 — About</p>
         <h1
-          className="font-display text-display-lg font-semibold text-cream"
+          className="mt-2 font-display text-display-lg font-extrabold text-cream"
           aria-label="Hi There!"
         >
           <span aria-hidden="true">{typed}</span>
           <span aria-hidden="true" className="cursor text-red-pokeball" />
         </h1>
-        <p className="mt-4 font-mono text-xs uppercase tracking-widest text-off/50">
-          About me
-        </p>
       </header>
 
       <section className="prose-ink">
