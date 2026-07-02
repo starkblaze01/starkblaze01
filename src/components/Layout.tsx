@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Pokedex from "./Pokedex";
+import WildEncounter from "./WildEncounter";
 import { useDocumentHead } from "../hooks/useDocumentHead";
 import { useTheme } from "../hooks/useTheme";
 
@@ -99,6 +100,7 @@ export default function Layout() {
       </footer>
 
       <Pokedex />
+      <WildEncounter />
     </div>
   );
 }

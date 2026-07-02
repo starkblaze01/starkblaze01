@@ -1,27 +1,24 @@
 import { useEffect, useState } from "react";
-
-type Theme = "dark" | "light";
-const KEY = "sb-theme";
-
-function readInitial(): Theme {
-  if (typeof window === "undefined") return "dark";
-  const stored = window.localStorage.getItem(KEY);
-  return stored === "light" ? "light" : "dark";
-}
+import { resolveInitialTheme, THEME_KEY, type Theme } from "../lib/theme";
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(readInitial);
+  const [theme, setTheme] = useState<Theme>(resolveInitialTheme);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    window.localStorage.setItem(KEY, theme);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", theme === "dark" ? "#0a0a0f" : "#f8f4e9");
+      ?.setAttribute("content", theme === "dark" ? "#120e0c" : "#f7f2e7");
   }, [theme]);
 
   return {
     theme,
-    toggle: () => setTheme((t) => (t === "dark" ? "light" : "dark")),
+    toggle: () =>
+      setTheme((t) => {
+        const next: Theme = t === "dark" ? "light" : "dark";
+        // Only an explicit toggle is stored; untouched visitors stay on the clock.
+        window.localStorage.setItem(THEME_KEY, next);
+        return next;
+      }),
   };
 }

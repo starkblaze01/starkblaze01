@@ -1,4 +1,47 @@
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+
+/**
+ * Holo-foil tilt: the card leans toward the pointer and a foil sheen
+ * follows it, like a holographic trading card catching light. Everything
+ * is driven through CSS variables set on the element directly — no
+ * re-renders on pointermove.
+ */
+function useHoloTilt() {
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    function onMove(e: PointerEvent) {
+      if (!el || e.pointerType === "touch") return;
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;
+      const py = (e.clientY - r.top) / r.height;
+      el.style.setProperty("--rx", `${((py - 0.5) * -7).toFixed(2)}deg`);
+      el.style.setProperty("--ry", `${((px - 0.5) * 9).toFixed(2)}deg`);
+      el.style.setProperty("--mx", `${(px * 100).toFixed(1)}%`);
+      el.style.setProperty("--my", `${(py * 100).toFixed(1)}%`);
+      el.style.setProperty("--sheen", "1");
+    }
+    function onLeave() {
+      if (!el) return;
+      el.style.setProperty("--rx", "0deg");
+      el.style.setProperty("--ry", "0deg");
+      el.style.setProperty("--sheen", "0");
+    }
+
+    el.addEventListener("pointermove", onMove);
+    el.addEventListener("pointerleave", onLeave);
+    return () => {
+      el.removeEventListener("pointermove", onMove);
+      el.removeEventListener("pointerleave", onLeave);
+    };
+  }, []);
+
+  return ref;
+}
 
 const ORIGIN = [
   "Varanasi",
@@ -46,11 +89,14 @@ function CardRow({ label, children }: { label: string; children: ReactNode }) {
 }
 
 export default function TrainerCard() {
+  const tiltRef = useHoloTilt();
   return (
-    <article
-      aria-label="Trainer card"
-      className="deal-in relative mx-auto max-w-2xl overflow-hidden rounded-xl border border-cardink/20 bg-card text-cardink shadow-[0_2px_0_rgba(26,18,13,0.25),0_24px_50px_-20px_rgba(0,0,0,0.65)]"
-    >
+    <div className="deal-in [perspective:1100px]">
+      <article
+        ref={tiltRef}
+        aria-label="Trainer card"
+        className="holo-tilt relative mx-auto max-w-2xl overflow-hidden rounded-xl border border-cardink/20 bg-card text-cardink shadow-[0_2px_0_rgba(26,18,13,0.25),0_24px_50px_-20px_rgba(0,0,0,0.65)]"
+      >
       {/* Red header band, like the top half of a pokéball */}
       <header className="relative flex items-center justify-between bg-red-pokeball px-6 py-3 sm:px-8">
         <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-cardink">
@@ -109,6 +155,10 @@ export default function TrainerCard() {
           </p>
         </footer>
       </div>
-    </article>
+
+      {/* Foil layer — catches the light as the card tilts */}
+      <div aria-hidden="true" className="holo-sheen" />
+      </article>
+    </div>
   );
 }

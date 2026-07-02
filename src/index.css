@@ -123,6 +123,59 @@
   animation: rise-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Holo-foil trading card: tilt follows the pointer, foil catches the light */
+.holo-tilt {
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+.holo-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--sheen, 0);
+  transition: opacity 0.4s ease;
+  mix-blend-mode: soft-light;
+  background:
+    radial-gradient(
+      circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 255, 255, 0.9),
+      transparent 40%
+    ),
+    linear-gradient(
+      115deg,
+      transparent 30%,
+      rgba(230, 57, 70, 0.55) 42%,
+      rgba(110, 170, 255, 0.5) 50%,
+      rgba(255, 215, 120, 0.55) 58%,
+      transparent 70%
+    );
+  background-size: 100% 100%, 250% 250%;
+  background-position: 0 0, var(--mx, 50%) var(--my, 50%);
+}
+
+/* Wild encounter toast rustles up from the grass */
+@keyframes rustle-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) rotate(0deg);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(-4px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(0) rotate(0.6deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+.rustle-up {
+  animation: rustle-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* Theme-aware overrides for the white/X utilities used across the app */
 [data-theme="light"] .border-white\/5 {
   border-color: rgb(var(--c-line) / 0.1);

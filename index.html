@@ -3,18 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <script>
+      // Day/night cycle — keep in sync with src/lib/theme.ts
       (function () {
         try {
           var t = localStorage.getItem("sb-theme");
-          if (t === "light" || t === "dark") {
-            document.documentElement.setAttribute("data-theme", t);
+          if (t !== "light" && t !== "dark") {
+            var h = new Date().getHours();
+            t = h >= 7 && h < 19 ? "light" : "dark";
           }
+          document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
     </script>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="theme-color" content="#120e0c" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="canonical" href="https://starkblaze01.dev/" />
 
