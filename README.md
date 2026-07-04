@@ -1,8 +1,8 @@
-### <div align="center">Hi, I'm Mayank Pathela, a curious full-stack developer, working👨‍💻 from the Pokémon World! 🐉</div>  
+### <div align="center">Hi, I'm Mayank Pathela, a curious software engineer, working👨‍💻 from the Pokémon World! 🐉</div>  
   
 
   
--  :briefcase:  Full Stack Developer at Derq, Dubai. GSoC + Outreachy mentor.
+-  :briefcase:  Senior Software Engineer at Derq, Dubai. GSoC + Outreachy mentor.
 
 - 🎓 Part-time MSCS candidate at Georgia Tech (OMSCS).
 

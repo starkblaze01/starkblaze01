@@ -1,3 +1,5 @@
+import PageHeader from "../components/PageHeader";
+
 type Role = {
   company: string;
   role: string;
@@ -10,7 +12,7 @@ type Role = {
 const ROLES: Role[] = [
   {
     company: "Derq",
-    role: "Full Stack Developer",
+    role: "Senior Software Engineer (prev. Full Stack Developer)",
     span: "Feb 2023 — Present",
     place: "Dubai, UAE",
     body: [
@@ -73,15 +75,12 @@ const TEACHING = [
 export default function Work() {
   return (
     <div className="mx-auto max-w-3xl space-y-14">
-      <header>
-        <h1 className="font-display text-display-lg font-semibold text-cream">
-          Work history
-        </h1>
-        <p className="mt-3 max-w-prose text-off/75">
+      <PageHeader entry="01" title="Work history">
+        <p>
           The short version: sensors, dashboards, and the pipelines between them.
           The long version is below.
         </p>
-      </header>
+      </PageHeader>
 
       <section className="space-y-10">
         {ROLES.map((r) => (

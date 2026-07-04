@@ -4,19 +4,15 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider, theme as antdTheme } from "antd";
 import App from "./App";
+import { resolveInitialTheme } from "./lib/theme";
 import { store } from "./store";
 import "./index.css";
 
-function readStoredTheme(): "dark" | "light" {
-  if (typeof window === "undefined") return "dark";
-  return window.localStorage.getItem("sb-theme") === "light" ? "light" : "dark";
-}
-
 function ThemedApp() {
-  const [theme, setTheme] = useState<"dark" | "light">(readStoredTheme);
+  const [theme, setTheme] = useState<"dark" | "light">(resolveInitialTheme);
 
   useEffect(() => {
-    const initial = readStoredTheme();
+    const initial = resolveInitialTheme();
     document.documentElement.setAttribute("data-theme", initial);
     setTheme(initial);
 
@@ -38,7 +34,7 @@ function ThemedApp() {
           theme === "dark" ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
         token: {
           colorPrimary: "#e63946",
-          fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
+          fontFamily: "'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif",
         },
       }}
     >
