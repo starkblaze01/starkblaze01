@@ -11,9 +11,9 @@ const STATS = [
 ];
 
 const META = [
-  ["Species", "Full Stack Developer"],
+  ["Species", "Senior Software Engineer"],
   ["Habitat", "Dubai, UAE"],
-  ["Evolution", "Intern → Full Stack Dev → Senior FSD"],
+  ["Evolution", "Intern → Full Stack Dev → Senior Software Engineer"],
   ["Branch form", "Mentor — GSoC, Outreachy, GCI"],
   ["Abilities", "Architects microservices · ships dashboards · mentors devs"],
   ["Weakness", "Tab hoarding, fourth coffee"],

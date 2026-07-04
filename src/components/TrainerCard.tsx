@@ -117,12 +117,12 @@ export default function TrainerCard() {
           Mayank Pathela
         </h1>
         <p className="mt-1 text-base text-cardink/70">
-          Full Stack Developer · Dubai, UAE
+          Senior Software Engineer · Dubai, UAE
         </p>
 
         <dl className="mt-5 divide-y divide-dotted divide-cardink/25 border-y border-dotted border-cardink/25">
           <CardRow label="Class">
-            Full Stack Developer at Derq · MSCS candidate, Georgia Tech
+            Senior Software Engineer at Derq · MSCS candidate, Georgia Tech
           </CardRow>
           <CardRow label="Origin">
             <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">

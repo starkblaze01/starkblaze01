@@ -12,7 +12,7 @@ type Role = {
 const ROLES: Role[] = [
   {
     company: "Derq",
-    role: "Full Stack Developer",
+    role: "Senior Software Engineer (prev. Full Stack Developer)",
     span: "Feb 2023 — Present",
     place: "Dubai, UAE",
     body: [

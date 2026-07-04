@@ -8,9 +8,9 @@ const SUFFIX = " — Mayank Pathela";
 
 const ROUTES: Record<string, Meta> = {
   "/": {
-    title: `${SITE} — Full Stack Developer`,
+    title: `${SITE} — Senior Software Engineer`,
     description:
-      "Mayank Pathela — Full Stack Developer at Derq, Dubai. MSCS candidate at Georgia Tech. Past GSoC + Outreachy mentor. Writes about JavaScript, systems, and AI.",
+      "Mayank Pathela — Senior Software Engineer at Derq, Dubai. MSCS candidate at Georgia Tech. Past GSoC + Outreachy mentor. Writes about JavaScript, systems, and AI.",
   },
   "/about": {
     title: `About${SUFFIX}`,
@@ -20,7 +20,7 @@ const ROUTES: Record<string, Meta> = {
   "/work": {
     title: `Work history${SUFFIX}`,
     description:
-      "Full Stack Developer at Derq (Dubai). Past: Tvarit GmbH, freelance MERN, IIT Bombay research intern. GSoC + Outreachy + GCI mentor.",
+      "Senior Software Engineer at Derq (Dubai). Past: Tvarit GmbH, freelance MERN, IIT Bombay research intern. GSoC + Outreachy + GCI mentor.",
   },
   "/projects": {
     title: `Projects${SUFFIX}`,
