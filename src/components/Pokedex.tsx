@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useKonami } from "../hooks/useKonami";
 
 const STATS = [
@@ -21,14 +21,23 @@ const META = [
 
 export default function Pokedex() {
   const [open, setOpen] = useState(false);
-  useKonami(() => setOpen((v) => !v));
+  const closeRef = useRef<HTMLButtonElement>(null);
+  useKonami(useCallback(() => setOpen((v) => !v), []));
 
   useEffect(() => {
+    if (!open) return;
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") setOpen(false);
     }
-    if (open) window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    const previous = document.activeElement as HTMLElement | null;
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+      previous?.focus();
+    };
   }, [open]);
 
   if (!open) return null;
@@ -53,6 +62,7 @@ export default function Pokedex() {
             </h2>
           </div>
           <button
+            ref={closeRef}
             type="button"
             onClick={() => setOpen(false)}
             className="font-mono text-xs text-off/60 hover:text-red-pokeball"

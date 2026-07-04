@@ -15,6 +15,9 @@ export function useTheme() {
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     window.localStorage.setItem(KEY, theme);
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", theme === "dark" ? "#0a0a0f" : "#f8f4e9");
   }, [theme]);
 
   return {

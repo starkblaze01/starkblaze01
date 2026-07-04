@@ -35,7 +35,7 @@ const ROUTES: Record<string, Meta> = {
   "/timeline": {
     title: `Timeline${SUFFIX}`,
     description:
-      "What I've shipped on this site since 2019, kept as a log rather than deleted.",
+      "What I've shipped on this site since 2018, kept as a log rather than deleted.",
   },
 };
 
@@ -49,16 +49,30 @@ function setMeta(name: string, content: string, attr: "name" | "property" = "nam
   el.setAttribute("content", content);
 }
 
+function setCanonical(url: string) {
+  let el = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", "canonical");
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", url);
+}
+
 export function useDocumentHead(override?: Partial<Meta>) {
   const { pathname } = useLocation();
   useEffect(() => {
     const base = ROUTES[pathname] ?? ROUTES["/"];
     const meta = { ...base, ...override };
+    const url = `https://starkblaze01.dev${ROUTES[pathname] && pathname !== "/" ? pathname : "/"}`;
     document.title = meta.title;
     setMeta("description", meta.description);
     setMeta("og:title", meta.title, "property");
     setMeta("og:description", meta.description, "property");
+    setMeta("og:url", url, "property");
     setMeta("twitter:title", meta.title);
     setMeta("twitter:description", meta.description);
+    setMeta("twitter:url", url, "property");
+    setCanonical(url);
   }, [pathname, override?.title, override?.description]);
 }

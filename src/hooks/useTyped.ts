@@ -11,14 +11,18 @@ export function useTyped(text: string, speedMs = 90, startDelayMs = 200) {
     }
     setOut("");
     let i = 0;
+    let interval: number | undefined;
     const start = window.setTimeout(() => {
-      const id = window.setInterval(() => {
+      interval = window.setInterval(() => {
         i += 1;
         setOut(text.slice(0, i));
-        if (i >= text.length) window.clearInterval(id);
+        if (i >= text.length) window.clearInterval(interval);
       }, speedMs);
     }, startDelayMs);
-    return () => window.clearTimeout(start);
+    return () => {
+      window.clearTimeout(start);
+      window.clearInterval(interval);
+    };
   }, [text, speedMs, startDelayMs]);
 
   return out;

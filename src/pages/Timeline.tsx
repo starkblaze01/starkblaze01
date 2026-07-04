@@ -50,8 +50,8 @@ export default function Timeline() {
           Timeline
         </h1>
         <p className="mt-3 text-off/75">
-          What I&rsquo;ve shipped on this site, in order. Old versions aren&rsquo;t
-          deleted — they&rsquo;re tagged.
+          What I&rsquo;ve shipped on this site, in order — a changelog going back
+          to the first build.
         </p>
       </header>
 

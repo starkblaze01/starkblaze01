@@ -120,7 +120,9 @@
 .cursor {
   display: inline-block;
   width: 0.55ch;
+  height: 0.9em;
   margin-left: 0.1ch;
+  vertical-align: -0.05em;
   background: currentColor;
   animation: cursor-blink 1s steps(1) infinite;
 }
